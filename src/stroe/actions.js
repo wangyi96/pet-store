@@ -2,7 +2,8 @@ import api from '../../api/index'
 import {
   RECEIVE_HEADER,
   RECEIVE_SURPRISE,
-  RECEIVE_FOODS
+  RECEIVE_FOODS,
+  RECEIVE_CLASSIFY
 } from './type'
 
 const CODE_OK = 'succeed'
@@ -32,12 +33,22 @@ export default {
   },
   getCat_foods({commit},callback){
     api.reqCat_foods().then(response =>{
-      console.log(response);
+      // console.log(response);
       let result = response.data
       if(result.code === CODE_OK){
         const foods = result
         commit(RECEIVE_FOODS,{foods})
-
+        callback && callback()
+      }
+    })
+  },
+  getClassify({commit},callback){
+    api.reqClassify().then(response =>{
+      // console.log(response);
+      let result = response.data
+      if(result){
+        const classify = result
+        commit(RECEIVE_CLASSIFY,{classify})
         callback && callback()
       }
     })

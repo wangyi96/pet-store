@@ -49,7 +49,7 @@
           <div class="top">
             <img :src="goods.big_image.image" alt="" class="good_img">
           </div>
-          <div class="bottom good_bottom" >
+          <div class="bottom good_bottom">
             <div class="good_wrapper">
               <div  v-for="(good,index) in goods.goods" :key="index" class="good_item">
                 <a href="javascript:;">
@@ -67,7 +67,7 @@
         </div>
       </div>
       <div class="food_classify" v-if="cat_foods.datas">
-        <div class="food_title" ref="food_title">
+        <div class="food_title" ref="foodTitle">
           <div class="title_food" >
             <ul>
               <li v-for="(item,index) in cat_foods.datas[6].menus">
@@ -119,20 +119,7 @@
       }
     },
     mounted(){
-      this.$nextTick(()=>{
-        setTimeout(()=>{
-          let wraps = document.getElementsByClassName('good_bottom')
-          new BScroll(wraps[0],{
-            scrollX:true
-          })
-          new BScroll(wraps[1],{
-            scrollX:true
-          })
-          new BScroll(this.$refs['food_title'],{
-            scrollX:true
-          })
-        },3000)
-      })
+      this.$store.dispatch('getCat_foods', this._initFood)
     },
     methods:{
       toggle_tab(index){
@@ -148,6 +135,26 @@
         })
         this.tabColor_array[index] = true
         this.foodClassify=index
+      },
+      _initFood(){
+        this.$nextTick(()=>{
+          setTimeout(()=>{
+            let wraps = document.getElementsByClassName('good_bottom');
+            console.log(wraps);
+            new BScroll(wraps[0],{
+              scrollX:true
+            })
+
+            new BScroll(wraps[1],{
+              scrollX:true,
+            })
+
+            new BScroll(this.$refs.foodTitle,{
+              scrollX:true,
+              click:true
+            })
+          },3000)
+        })
       }
     },
     computed:{

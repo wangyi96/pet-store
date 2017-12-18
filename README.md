@@ -1,21 +1,6 @@
-# ele
-
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# 仿E宠商城App
+## 如何实现跨越
+## 如何在主路由获取子路由的数据
+## 使用better-scroll滑动库常见的问题
+## 如何动态获取图形验证码
+##

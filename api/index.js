@@ -10,5 +10,8 @@ export default {
   reqCat_foods(){
     return axios.get('/api/cat_foods')
   },
+  reqClassify(){
+    return axios.get('/api/classify')
+  },
 }
 

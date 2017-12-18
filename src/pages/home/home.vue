@@ -27,7 +27,7 @@
             <div class="surprise">
               <div class="surprise_top">
                 <div class="logo">
-                  <img src="../../common/img/suprice.png" alt="">
+                  <img src="//static.epetbar.com/static_web/wap/src/images/suprice.png" alt="">
                 </div>
                 <div class="text">距本场结束</div>
                 <div class="time">
@@ -39,7 +39,7 @@
                 </div>
                 <div class="more">
                   <a href="javascript:;">
-                    <img src="../../common/img/c6b7ac04e8c6cb827365c17bd74aef59.png" alt="">
+                    <img src="https://img2.epetbar.com/nowater/2016-10/26/20/c6b7ac04e8c6cb827365c17bd74aef59.png" alt="">
                   </a>
                 </div>
               </div>
@@ -66,30 +66,30 @@
           <div class="xline"></div>
           <div class="currency">
             <div>
-              <img src="../../common/img/370311d69fd1a39fedca2774dc25ad97.jpg" alt="">
+              <img src="" alt="">
             </div>
           </div>
           <div class="xline"></div>
           <div class="currency_ad">
             <div class="left">
-              <img src="../../common/img/5a2a1a99f5642f160f4d22ee3cb7ee8a.jpg" alt="">
+              <img src="https://img2.epetbar.com/nowater/2017-12/14/19/5a2a1a99f5642f160f4d22ee3cb7ee8a.jpg@!water" alt="">
             </div>
             <div class="right">
               <div class="top">
-                <img src="../../common/img/e785855e80fd229d424d9ce15d7d7666.jpg" alt="">
+                <img src="https://img2.epetbar.com/nowater/2017-12/13/09/e785855e80fd229d424d9ce15d7d7666.jpg@!water" alt="">
               </div>
               <div class="bottom">
-                <img src="../../common/img/5d685158ea5f5eb8b707dad905384aa6.jpg" alt="">
+                <img src="https://img2.epetbar.com/nowater/2017-12/13/09/5d685158ea5f5eb8b707dad905384aa6.jpg@!water" alt="">
               </div>
             </div>
           </div>
           <div class="xline"></div>
           <div class="video">
             <div class="video_top">
-              <img class="left" src="../../common/img/2b2ca7c9270d99cab79cc9a7b8b42399.jpg" alt="">
+              <img class="left" src="https://img2.epetbar.com/nowater/2017-12/13/16/2b2ca7c9270d99cab79cc9a7b8b42399.jpg" alt="">
               <div class="right">
                 <a href="javascript:;">
-                  <img src="../../common/img/017c21f7004f3e834cebd12305d266cc.jpg" alt="">
+                  <img src="https://img2.epetbar.com/nowater/2017-12/13/11/f58b605d8d9b1900944a7b3a4ce12eb1.jpg" alt="">
                 </a>
               </div>
             </div>
@@ -109,10 +109,10 @@
           <div class="xline"></div>
           <div class="brand">
             <div class="brand_top">
-              <img class="left" src="../../common/img/70adf3f7cc4cbe58a7dc4865c4b4f932.jpg" alt="">
+              <img class="left" src="https://img2.epetbar.com/nowater/2017-12/13/16/70adf3f7cc4cbe58a7dc4865c4b4f932.jpg" alt="">
               <div class="right">
                 <a href="javascript:;">
-                  <img src="../../common/img/017c21f7004f3e834cebd12305d266cc.jpg" alt="">
+                  <img src="https://img2.epetbar.com/nowater/2017-12/13/17/e9aea7ada15165227f1bfb15ba530875.jpg" alt="">
                 </a>
               </div>
             </div>
@@ -125,10 +125,10 @@
           </div>
           <div class="experience">
             <div class="experience_top">
-              <img class="left" src="../../common/img/0954d3cd070051587d8f4d6af79882aa.jpg" alt="">
+              <img class="left" src="https://img2.epetbar.com/nowater/2017-12/13/16/0954d3cd070051587d8f4d6af79882aa.jpg" alt="">
               <div class="right">
                 <a href="javascript:;">
-                  <img src="../../common/img/017c21f7004f3e834cebd12305d266cc.jpg" alt="">
+                  <img src="https://img2.epetbar.com/nowater/2017-12/13/13/5cfcbe65444cb2ce687118f8dc0ceca2.jpg" alt="">
                 </a>
               </div>
             </div>
@@ -145,10 +145,10 @@
           <div class="xline"></div>
           <div class="theatre" v-if="header.datas">
             <div class="theatre_top">
-              <img class="left" src="../../common/img/ef5a8dee1393526fed2afe5059fb8c58.jpg" alt="">
+              <img class="left" src="https://img2.epetbar.com/nowater/2017-12/13/16/ef5a8dee1393526fed2afe5059fb8c58.jpg" alt="">
               <div class="right">
                 <a href="javascript:;">
-                  <img src="../../common/img/017c21f7004f3e834cebd12305d266cc.jpg" alt="">
+                  <img src="https://img2.epetbar.com/nowater/2017-12/13/16/415c0eb8c9b2726d51aad24fc3e76939.jpg" alt="">
                 </a>
               </div>
             </div>
@@ -226,7 +226,6 @@
     mounted(){
       this.$store.dispatch('getHeader')
       this.$store.dispatch('getSurprise')
-      this.$store.dispatch('getCat_foods')
 
       this.$nextTick(()=>{
         new BScroll(this.$refs.home_wrapper)

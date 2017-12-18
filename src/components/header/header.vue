@@ -42,6 +42,7 @@
 <script>
   import Header from '../../components/header/header.vue'
   import BScroll from 'better-scroll'
+
   export default {
     data(){
       return{

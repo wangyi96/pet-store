@@ -43,6 +43,8 @@
     "portfinder": "^1.0.13",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
+    "pubsub-js": "^1.5.7",
+    "pubsubjs": "^0.3.9",
     "rimraf": "^2.6.0",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
