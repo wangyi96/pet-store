@@ -2,7 +2,7 @@
   <div class="userCenter">
     <div class="userhead">
       <div class="head_top">
-        <a href="javascript:;" class="close"></a>
+        <a href="javascript:;" class="close" @click="close"></a>
         <a href="https://wap.epet.com/register.html" class="reg">注册</a>
       </div>
       <div class="epet">
@@ -29,16 +29,6 @@
       <router-view />
     </keep-alive>
 
-    <div class="wjmm">
-      <a href="javascript:;">忘记密码？</a>
-    </div>
-
-    <div class="button" @click="login">
-      <a href="javascript:;">
-        登录
-      </a>
-    </div>
-
     <div style="height:10em"></div>
 
     <div class="other-login">
@@ -64,29 +54,14 @@
     data(){
       return{
         isShow:true,
-        verify:'',
-        phone:''
       }
-    },
-    mounted(){
-      PubSub.subscribe('code',(msg,data) => {
-        this.verify = data
-      })
-      PubSub.subscribe('phone',(msg,data) => {
-        this.phone = data
-      })
     },
     methods:{
       toggle(){
         this.isShow = !this.isShow
       },
-      login(){
-        let url = `http://localhost:3000/sendcode?phone=${this.phone}`
-        axios.get(url)
-          .then((response)=>{
-          console.log(response);
-        })
-
+      close(){
+        this.$router.push('/home')
       }
     }
   }

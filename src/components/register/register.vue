@@ -6,21 +6,30 @@
           <ul>
             <li>
               <span class="mNumIco"></span>
-              <input v-model="phone" type="text" placeholder="已注册的手机号" class="dttext" name="phone" id="bdphone">
+              <input  ref="setphone" type="text" placeholder="已注册的手机号" class="dttext" name="phone">
             </li>
             <li>
               <span class="mpasswordIco"></span>
-              <input v-model="verify" type="text" placeholder="请输入图片内容" class="dttext">
-              <span id="v_container" style="width: 80px;height: 35px;" class="map_span"></span>
+              <input  ref="codePwd" type="text" placeholder="请输入图片内容" class="dttext">
+              <span id="v_container" style="width: 80px;height: 30px;" class="map_span"></span>
             </li>
             <li>
               <span class="mpasswordIco"></span>
-              <input type="text" class="dttext" placeholder="动态密码" style="padding-right:8.5em;">
-              <a href="javascript:;" class="getPwd">动态获取密码</a>
+              <input  ref="statePwd" type="text" class="dttext" placeholder="动态密码" style="padding-right:8.5em;">
+              <a href="javascript:;" class="getPwd" @click="getPwd">动态获取密码</a>
             </li>
           </ul>
         </div>
       </form>
+    </div>
+    <div class="wjmm">
+      <a href="javascript:;">忘记密码？</a>
+    </div>
+
+    <div class="button" @click="login">
+      <a href="javascript:;">
+        登录
+      </a>
     </div>
   </div>
 
@@ -28,24 +37,40 @@
 
 <script>
   import PubSub from 'pubsub-js'
+  import axios from 'axios'
+  import {mapState} from 'vuex'
   export default {
-    data(){
-      return {
-        verify:"",
-        phone:""
-      }
-    },
     mounted(){
-      new GVerify("v_container");
-
+      this.verifyCode = new GVerify("v_container");
     },
-    watch:{
-      verify(){
-        PubSub.publish('code',this.verify)
+    methods:{
+      login(){
+        let res = this.verifyCode.validate(this.$refs.codePwd.value);
+         if(!res){
+           alert('验证错误')
+           return
+         }
+
+        let phone = this.$refs.setphone.value;
+        let statePwd = this.$refs.statePwd.value;
+        // /login?phone=13716962779&code=123123
+        let url = `/api/login`
+         axios.post(url,{phone,code:statePwd})
+         .then((response)=>{
+            let result = response.data
+            if(result.code==1){
+              Toast('登录成功');
+            }
+         })
       },
-      phone(){
-        PubSub.publish('phone',this.phone)
-      },
+
+      getPwd(){
+        let url = `/api/sendcode?phone=${this.$refs.setphone.value}`
+         axios.get(url)
+           .then((response)=>{
+           console.log(response);
+         })
+      }
     }
   }
 </script>

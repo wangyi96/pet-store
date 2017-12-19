@@ -43,7 +43,7 @@
       </div>
       <div class="food_activity" v-if="cat_foods.datas">
         <div>
-          <img :src="cat_foods.datas[4].value.center.img.image" alt="">
+          <img v-lazy="cat_foods.datas[4].value.center.img.image" alt="">
         </div>
         <div class="goods" v-for="(goods,index) in cat_foods.datas[5].data.advAndGoods" :key="index">
           <div class="top">
@@ -54,7 +54,7 @@
               <div  v-for="(good,index) in goods.goods" :key="index" class="good_item">
                 <a href="javascript:;">
                   <div class="good_img">
-                    <img :src="good['small_image'].image" alt="">
+                    <img v-lazy="good['small_image'].image" alt="">
                   </div>
                   <div class="text">
                     <p>{{good.subject}}</p>

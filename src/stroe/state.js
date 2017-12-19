@@ -2,5 +2,10 @@ export default {
   header:{},
   surprise_day:{},
   cat_foods:{},
-  classify:{}
+  classify:{},
+/*  userMessage:{
+    verify:'',
+    phone:'',
+    setpwd:''
+  }*/
 }

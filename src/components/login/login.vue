@@ -6,21 +6,35 @@
           <ul>
             <li>
               <span class="mNameIco"></span>
-              <input type="text" placeholder="手机号/邮箱/用户名" class="text" name="username" id="username">
+              <input ref="setphone2"type="text" placeholder="手机号/邮箱/用户名" class="text" name="username" id="username">
             </li>
             <li>
               <span class="mpasswordIco"></span>
-              <input type="password" placeholder="输入密码" class="text" name="password" id="password">
+              <input ref="statePwd2" type="password" placeholder="输入密码" class="text" name="password" id="password">
             </li>
           </ul>
         </div>
       </form>
     </div>
+    <div class="wjmm">
+      <a href="javascript:;">忘记密码？</a>
+    </div>
+
+    <div class="button" @click="login">
+      <a href="javascript:;">
+        登录
+      </a>
+    </div>
   </div>
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
+    methods:{
+      login(){
+      }
+    },
     components: {}
   }
 </script>

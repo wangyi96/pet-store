@@ -1,6 +1,6 @@
 <template>
   <div class="classify">
-    <header class="classify_header">
+    <header class="classify_header" v-show="isShow">
       <div class="left">
         <router-link to="/classify/type">
           <span>分类</span>
@@ -17,7 +17,7 @@
     </header>
     <div class="main">
       <keep-alive>
-        <router-view :classify="classify"/>
+        <router-view :classify="classify" :Show="Show"/>
       </keep-alive>
     </div>
   </div>
@@ -26,6 +26,16 @@
 <script>
   import {mapState} from 'vuex'
   export default {
+    data(){
+      return{
+       isShow:true
+      }
+    },
+    methods:{
+      Show(){
+        this.isShow = !this.isShow
+      }
+    },
     mounted(){
       this.$store.dispatch('getClassify')
     },

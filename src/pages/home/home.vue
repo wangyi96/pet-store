@@ -17,7 +17,7 @@
             <ul v-if="this.header.datas">
               <li v-for="(menu,index) in header.datas[1].menus">
                 <a href="javascript:;">
-                  <img :src="menu.image" alt="">
+                  <img v-lazy="menu.image" alt="">
                 </a>
               </li>
             </ul>
@@ -66,7 +66,7 @@
           <div class="xline"></div>
           <div class="currency">
             <div>
-              <img src="" alt="">
+              <img src="https://img2.epetbar.com/nowater/2017-12/14/21/370311d69fd1a39fedca2774dc25ad97.jpg@!water" alt="">
             </div>
           </div>
           <div class="xline"></div>
@@ -136,7 +136,7 @@
               <div class="block">
                 <el-carousel height="150px"  v-if="this.header.datas">
                   <el-carousel-item v-for="(pic,index) in this.header.datas[28].value" :key="index">
-                    <img :src="pic.image" alt="" class="swipe_img">
+                    <img z-lazy="pic.image" alt="" class="swipe_img">
                   </el-carousel-item>
                 </el-carousel>
               </div>

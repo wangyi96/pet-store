@@ -3,7 +3,10 @@ import {
   RECEIVE_HEADER,
   RECEIVE_SURPRISE,
   RECEIVE_FOODS,
-  RECEIVE_CLASSIFY
+  RECEIVE_CLASSIFY,
+  RECEIVE_PHONE,
+  RECEIVE_VERIFY,
+  RECEIVE_SETPWD
 } from './type'
 
 const CODE_OK = 'succeed'
@@ -53,5 +56,13 @@ export default {
       }
     })
   },
-
+/*  phone({commit},phone){
+    commit(RECEIVE_PHONE,{phone})
+  },
+  verify({commit},verify){
+    commit(RECEIVE_VERIFY,{verify})
+  },
+  pwd({commit},setpwd){
+    commit(RECEIVE_SETPWD,{setpwd})
+  },*/
 }
