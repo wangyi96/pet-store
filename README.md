@@ -355,4 +355,14 @@
   }
 ```
 
-###
+### mint-ui使用时常见问题
+- 确保下载，引入mint-ui
+- 确保引入mint-ui的css样式库
+- 使用自动轮播时，需要给最外层加上一个高度
+```
+  import 'mint-ui/lib/style.css'
+  import { Swipe, SwipeItem} from 'mint-ui';
+
+  Vue.component(Swipe.name, Swipe);
+  Vue.component(SwipeItem.name, SwipeItem);
+```
