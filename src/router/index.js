@@ -1,10 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from '../pages/home/home.vue'
+/*import Home from '../pages/home/home.vue'
 import Classify from '../pages/classify/classify.vue'
 import ShowCat from '../pages/showCat/showCat.vue'
-import UserCenter from '../pages/userCenter/userCenter.vue'
+import UserCenter from '../pages/userCenter/userCenter.vue'*/
+
+const Home = () => import('../pages/home/home.vue')
+const Classify = () => import('../pages/classify/classify.vue')
+const ShowCat = () => import('../pages/showCat/showCat.vue')
+const UserCenter = () => import('../pages/userCenter/userCenter.vue')
+
 import Type from '../components/type/type.vue'
 import Brand from '../components/brand/brand.vue'
 import Login from '../components/login/login.vue'

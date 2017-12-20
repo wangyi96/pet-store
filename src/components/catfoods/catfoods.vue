@@ -1,14 +1,12 @@
 <template>
   <div class="cat_foods">
     <div class="foods_wrapper">
-      <div class="banner_item">
-        <div class="block">
-          <el-carousel height="150px"  v-if="cat_foods.datas">
-            <el-carousel-item v-for="(pic,index) in cat_foods.datas[0].value" :key="index">
-              <img :src="pic.image" alt="" class="swipe_img">
-            </el-carousel-item>
-          </el-carousel>
-        </div>
+      <div class="banner_item" v-if="cat_foods.datas">
+        <mt-swipe :auto="4000">
+          <mt-swipe-item v-for="(pic,index) in cat_foods.datas[0].value" :key="index">
+            <img :src="pic.image" alt="" class="swipe_img">
+          </mt-swipe-item>
+        </mt-swipe>
       </div>
       <div class="tab_foods">
         <div class="food_tabs" v-if="cat_foods.datas">
@@ -138,22 +136,19 @@
       },
       _initFood(){
         this.$nextTick(()=>{
-          setTimeout(()=>{
-            let wraps = document.getElementsByClassName('good_bottom');
-            console.log(wraps);
-            new BScroll(wraps[0],{
-              scrollX:true
-            })
+          let wraps = document.getElementsByClassName('good_bottom');
+          console.log(wraps);
+          new BScroll(wraps[0],{
+            scrollX:true
+          })
 
-            new BScroll(wraps[1],{
-              scrollX:true,
-            })
+          new BScroll(wraps[1],{
+            scrollX:true,
+          })
 
-            new BScroll(this.$refs.foodTitle,{
-              scrollX:true,
-              click:true
-            })
-          },3000)
+          new BScroll(this.$refs.foodTitle,{
+            scrollX:true,
+          })
         })
       }
     },
@@ -352,6 +347,7 @@
       position relative
       overflow hidden
       width 100%
+      height 150px
       .swipe_img
         width 100%;
         height 100%;

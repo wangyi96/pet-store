@@ -42,6 +42,9 @@
   export default {
     mounted(){
       this.verifyCode = new GVerify("v_container");
+      PubSub.subscribe('phone',(msg,data)=>{
+
+      })
     },
     methods:{
       login(){

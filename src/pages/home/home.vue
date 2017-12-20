@@ -3,14 +3,12 @@
     <ele_header :header="header" :change="change"/>
     <div class="home_wrapper" ref="home_wrapper" v-show="mask_array[0].code==0">
       <div class="home_container">
-        <div class="banner_item">
-          <div class="block">
-            <el-carousel height="150px"  v-if="this.header.datas">
-              <el-carousel-item v-for="(pic,index) in header.datas[0].value" :key="index">
-                <img :src="pic.image" alt="" class="swipe_img">
-              </el-carousel-item>
-            </el-carousel>
-          </div>
+        <div class="banner_item" v-if="this.header.datas">
+          <mt-swipe :auto="4000">
+            <mt-swipe-item v-for="(pic,index) in header.datas[0].value" :key="index">
+              <img :src="pic.image" alt="" class="swipe_img">
+            </mt-swipe-item>
+          </mt-swipe>
         </div>
         <div class="main_wrap">
           <div class="columnnavdiv">
@@ -132,14 +130,12 @@
                 </a>
               </div>
             </div>
-            <div class="experience_item">
-              <div class="block">
-                <el-carousel height="150px"  v-if="this.header.datas">
-                  <el-carousel-item v-for="(pic,index) in this.header.datas[28].value" :key="index">
-                    <img z-lazy="pic.image" alt="" class="swipe_img">
-                  </el-carousel-item>
-                </el-carousel>
-              </div>
+            <div class="experience_item" v-if="this.header.datas">
+              <mt-swipe :auto="4000">
+                <mt-swipe-item v-for="(pic,index) in this.header.datas[28].value" :key="index">
+                  <img :src="pic.image" alt="" class="swipe_img">
+                </mt-swipe-item>
+              </mt-swipe>
             </div>
           </div>
           <div class="xline"></div>
@@ -430,6 +426,7 @@
                 img
                   width 50%
             .experience_item
+              height 150px
               .swipe_img
                 width 100%
           .theatre
@@ -491,6 +488,7 @@
           position relative
           overflow hidden
           width 100%
+          height: 150px
           .swipe_img
             width 100%;
             height 100%;
